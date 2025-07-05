@@ -1,4 +1,4 @@
--- 🚧 Initial Query: Join Bookings with Users, Properties, and Payments
+-- 🚧 Initial Query: Join Bookings with Users, Properties, and Payments (with WHERE and AND)
 EXPLAIN ANALYZE
 SELECT 
     b.id AS booking_id,
@@ -17,9 +17,12 @@ JOIN
 JOIN 
     properties p ON b.property_id = p.id
 JOIN 
-    payments pay ON b.id = pay.booking_id;
+    payments pay ON b.id = pay.booking_id
+WHERE 
+    b.start_date >= '2024-01-01'
+    AND b.end_date <= '2024-12-31';
 
--- ✅ Optimized Query: Only fetch needed columns with indexed joins
+-- ✅ Optimized Query: Fewer columns, improved JOIN types, and index-aware
 EXPLAIN ANALYZE
 SELECT 
     b.id AS booking_id,
@@ -35,4 +38,7 @@ INNER JOIN
 INNER JOIN 
     properties p ON b.property_id = p.id
 LEFT JOIN 
-    payments pay ON b.id = pay.booking_id;
+    payments pay ON b.id = pay.booking_id
+WHERE 
+    b.start_date >= '2024-01-01'
+    AND b.end_date <= '2024-12-31';
