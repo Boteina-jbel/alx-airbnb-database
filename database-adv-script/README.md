@@ -36,3 +36,19 @@ Finds users who have made more than 3 bookings.
 🔗 References:  
 - [SQL Subqueries – W3Schools](https://www.w3schools.com/sql/sql_subqueries.asp)  
 - [Correlated Subqueries – GeeksforGeeks](https://www.geeksforgeeks.org/sql-correlated-subqueries/)
+
+---
+
+## 📈 Aggregations & Window Functions (aggregations_and_window_functions.sql)
+
+### ✅ Total Bookings per User  
+Uses `COUNT` and `GROUP BY` to find how many bookings each user has made.
+
+### ✅ Property Booking Rank  
+Uses the `RANK()` window function to rank properties by number of bookings.
+
+🔗 References:  
+- [SQL GROUP BY – W3Schools](https://www.w3schools.com/sql/sql_groupby.asp)  
+- [SQL Window Functions – Mode](https://mode.com/sql-tutorial/sql-window-functions/)  
+- [SQL RANK Function – W3Schools](https://www.w3schools.com/sql/func_sqlserver_rank.asp)
+
